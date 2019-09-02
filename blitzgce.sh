@@ -10,6 +10,7 @@ source /opt/blitzgce/functions/interface.sh
 source /opt/blitzgce/functions/ip.sh
 source /opt/blitzgce/functions/deploy.sh
 source /opt/blitzgce/functions/destroy.sh
+source /opt/blitzgce/functions/stop.sh
 
 ### the primary interface for GCE
 gcestart() {
@@ -49,7 +50,9 @@ gcestart() {
 7. Deploy GCE Server     : $gcedeployedcheck
 8. SSH into the GCE Box
 
-a. Destroy Server
+a. Stop Server
+b. Start Server
+d. Destroy Server
 z. Exit
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -108,10 +111,30 @@ EOF
         ;;
     A)
         projectdeny
-        destroyserver
+        stopserver
         gcestart
         ;;
     a)
+        projectdeny
+        stopserver
+        gcestart
+        ;;
+    B)
+        projectdeny
+        startserver
+        gcestart
+        ;;
+    b)
+        projectdeny
+        startserver
+        gcestart
+        ;;
+    D)
+        projectdeny
+        destroyserver
+        gcestart
+        ;;
+    d)
         projectdeny
         destroyserver
         gcestart
