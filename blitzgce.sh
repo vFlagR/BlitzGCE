@@ -11,6 +11,7 @@ source /opt/blitzgce/functions/ip.sh
 source /opt/blitzgce/functions/deploy.sh
 source /opt/blitzgce/functions/destroy.sh
 source /opt/blitzgce/functions/stop.sh
+source /opt/blitzgce/functions/start.sh
 
 ### the primary interface for GCE
 gcestart() {
