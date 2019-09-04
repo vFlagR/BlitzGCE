@@ -86,7 +86,10 @@ EOF
   ## old code can be deleted MrDoob
   ## NVME counter to add dont edit this lines below
 
-  nvmedeploy="$(echo /pg/var/deploy.nvme)"
+  
+   nvmedeploy="/pg/var/deploy.nvme"
+   sudo rm -rf $nvmedeploy
+   touch $nvmedeploy
 
   if [[ "$typed" == "1" ]]; then
     echo "$typed" >/pg/var/project.nvme
