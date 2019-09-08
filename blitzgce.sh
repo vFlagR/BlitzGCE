@@ -36,6 +36,8 @@ gcestart() {
         gcedeployedcheck=NOT-SET
     fi
 
+    servercheck
+
     tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -112,22 +114,20 @@ EOF
         ;;
     A)
         projectdeny
-        stopserver
+        if [[ "$gcestatuscheck" == "RUNNING" ]]; then
+            stopserver
+        else
+            startserver
+        fi
         gcestart
         ;;
     a)
         projectdeny
-        stopserver
-        gcestart
-        ;;
-    B)
-        projectdeny
-        startserver
-        gcestart
-        ;;
-    b)
-        projectdeny
-        startserver
+        if [[ "$gcestatuscheck" == "RUNNING" ]]; then
+            stopserver
+        else
+            startserver
+        fi
         gcestart
         ;;
     D)
