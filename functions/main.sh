@@ -63,9 +63,12 @@ servercheck() {
 }
 
 serverstatuscheck() {
+  GREEN='\033[00;32m'
+  RED='\033[00;31m'
+
   gcestatuscheck=""
   if [[ "$gcestatuscheck" == "" ]]; then
     tempstatuscheck=$(gcloud compute instances describe pg-gce --zone $ipzone | grep "RUNNING" | awk '{print $2}')
-    if [[ "$tempstatuscheck" == "RUNNING" ]]; then gcestatuscheck="RUNNING \e[92mLight green"; else gcestatuscheck="STOPPED \e[91mLight red"; fi
+    if [[ "$tempstatuscheck" == "RUNNING" ]]; then gcestatuscheck="$GREEN RUNNING"; else gcestatuscheck="$RED STOPPED"; fi
   fi
 }
