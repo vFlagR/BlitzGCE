@@ -84,7 +84,7 @@ EOF
   drivesize="$(echo /var/plexguide/deploy.hddsize)"
 
   if [[ "$typed" != "" ]]; then
-    echo "$typed" >/var/plexguide/deploy.hddsize
+    echo "$typed"GB >/var/plexguide/deploy.hddsize
   elif [[ "$typed" == "Z" || "z" || "q" || "Q" || "c" || "C" ]]; then
     echo "no changes" #fi
   else hddsize; fi

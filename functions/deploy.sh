@@ -80,7 +80,7 @@ EOF
     --custom-cpu $processor --custom-memory $ramcount \
     --image-family ubuntu-1804-lts --image-project ubuntu-os-cloud \
     --boot-disk-type pd-ssd \
-    --boot-disk-auto-delete --boot-disk-size ${tail /var/plexguide/deploy.hddsize}GB \
+    --boot-disk-auto-delete --boot-disk-size ${tail /var/plexguide/deploy.hddsize} \
     # $(tail /var/plexguide/deploy.nvme)
 
   # ### Deploys the PG Template
