@@ -72,7 +72,7 @@ serverstatuscheck() {
 
     if [[ "$tempstatuscheck" == "RUNNING" ]]; then 
         gcestatuscheck="RUNNING"; 
-    elif [[ "$gcestatuscheck" == "TERMINATED" ]]; then 
+    elif [[ "$tempstatuscheck" == "TERMINATED" ]]; then 
         gcestatuscheck="STOPPED"; 
     else 
         gcestatuscheck="";    
