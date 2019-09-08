@@ -37,7 +37,7 @@ deployfail() {
   fail1=$(cat /var/plexguide/project.ipregion)
   fail2=$(cat /var/plexguide/project.processor)
   fail3=$(cat /var/plexguide/project.account)
-  fail4=$(cat /var/plexguide/project.nvme)
+  fail4=$(cat /var/plexguide/project.hddsize)
 
   if [[ "$fail1" == "NOT-SET" || "$fail2" == "NOT-SET" || "$fail3" == "NOT-SET" || "$fail4" == "NOT-SET" ]]; then
     gcefail="on"
