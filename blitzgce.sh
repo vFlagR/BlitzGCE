@@ -54,7 +54,7 @@ gcestart() {
 8. SSH into the GCE Box
 
 Server status            : $gcestatuscheck
-a. Stop Server
+a. Start/Stop Server
 d. Destroy Server
 z. Exit
 
