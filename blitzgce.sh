@@ -116,8 +116,7 @@ EOF
         projectdeny
         if [[ "$gcestatuscheck" == "RUNNING" ]]; then
             stopserver
-        elif [[ "$gcestatuscheck" == "TERMINATED" ]]; then
-            echo "STOPPED" >> $gcestatuscheck
+        elif [[ "$gcestatuscheck" == "STOPPED" ]]; then
             startserver
         else 
             $gcestatuscheck == ""
@@ -128,8 +127,7 @@ EOF
         projectdeny
         if [[ "$gcestatuscheck" == "RUNNING" ]]; then
             stopserver
-        elif [[ "$gcestatuscheck" == "TERMINATED" ]]; then
-            echo "STOPPED" >> $gcestatuscheck
+        elif [[ "$gcestatuscheck" == "STOPPED" ]]; then
             startserver
         else 
             $gcestatuscheck == ""
