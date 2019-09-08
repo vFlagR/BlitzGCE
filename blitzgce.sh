@@ -91,7 +91,7 @@ EOF
         ;;
     5)
         projectdeny
-        nvmecount
+        hddsize
         gcestart
         ;;
     6)
