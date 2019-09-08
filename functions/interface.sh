@@ -90,49 +90,6 @@ EOF
   else hddsize; fi
 }
 
-# nvmecount() {
-#   tee <<-EOF
-
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# 🌎  NVME Count
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-# Most users will only need to utilize 1 -2 NVME Drives. The more, the
-# faster the processing, but the faster your credits drain. If intent is to
-# be in beast mode during the GCEs duration, 3 - 4 is acceptable.
-
-# INSTRUCTIONS: Set the NVME Count ~ 1/2/3/4
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-# EOF
-#   read -p 'Type Number | Press [ENTER]: ' typed </dev/tty
-#   ## old code can be deleted MrDoob
-#   ##if [[ "$typed" == "1" || "$typed" == "2" || "$typed" == "3" || "$typed" == "4" ]]
-#   ##; then
-#   ## echo "$typed" > /var/plexguide/project.nvme; else nvmecount; fi
-#   ## old code can be deleted MrDoob
-#   ## NVME counter to add dont edit this lines below
-
-#   nvmedeploy="$(echo /var/plexguide/deploy.nvme)"
-
-#   if [[ "$typed" == "1" ]]; then
-#     echo "$typed" >/var/plexguide/project.nvme
-#     echo -e "--local-ssd interface=nvme" >$nvmedeploy
-#   elif [[ "$typed" == "2" ]]; then
-#     echo "$typed" >/var/plexguide/project.nvme
-#     echo -e "--local-ssd interface=nvme \\n--local-ssd interface=nvme " >$nvmedeploy
-#   elif [[ "$typed" == "3" ]]; then
-#     echo "$typed" >/var/plexguide/project.nvme
-#     echo -e "--local-ssd interface=nvme \\n--local-ssd interface=nvme \\n--local-ssd interface=nvme" >$nvmedeploy
-#   elif [[ "$typed" == "4" ]]; then
-#     echo "$typed" >/var/plexguide/project.nvme
-#     echo -e "--local-ssd interface=nvme \\n--local-ssd interface=nvme \\n--local-ssd interface=nvme \\n--local-ssd interface=nvme" >$nvmedeploy
-#   elif [[ "$typed" -gt "4" ]]; then
-#     echo "more then 4 NVME's is not possible" && sleep 5 && nvmecount
-#   elif [[ "$typed" == "Z" || "z" || "q" || "Q" || "c" || "C" ]]; then
-#     echo "no changes" #fi
-#   else nvmecount; fi
-# }
 ramcount() {
   tee <<-EOF
 
@@ -421,7 +378,7 @@ EOF
     ;;
   *)
     processorcount
-    nvmecount
+    hddsize
     ;;
   esac
 
