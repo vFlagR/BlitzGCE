@@ -53,6 +53,7 @@ gcestart() {
 7. Deploy GCE Server     : $gcedeployedcheck
 8. SSH into the GCE Box
 
+Server status            : $gcestatuscheck
 a. Stop Server
 d. Destroy Server
 z. Exit
@@ -111,8 +112,6 @@ EOF
             gcestart
         fi
         ;;
-    Server Status: $gcestatuscheck
-    ;;
     A)
         projectdeny
         if [[ "$gcestatuscheck" == "RUNNING" ]]; then
