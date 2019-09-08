@@ -112,6 +112,7 @@ EOF
         fi
         ;;
     Server Status: $gcestatuscheck
+    ;;
     A)
         projectdeny
         if [[ "$gcestatuscheck" == "RUNNING" ]]; then
