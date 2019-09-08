@@ -116,8 +116,10 @@ EOF
         projectdeny
         if [[ "$gcestatuscheck" == "RUNNING" ]]; then
             stopserver
-        else
+        elif [[ "$gcestatuscheck" == "STOPPED" ]]; then
             startserver
+        else 
+            $gcestatuscheck == ""
         fi
         gcestart
         ;;
@@ -125,8 +127,10 @@ EOF
         projectdeny
         if [[ "$gcestatuscheck" == "RUNNING" ]]; then
             stopserver
-        else
+        elif [[ "$gcestatuscheck" == "STOPPED" ]]; then
             startserver
+        else 
+            $gcestatuscheck == ""
         fi
         gcestart
         ;;
