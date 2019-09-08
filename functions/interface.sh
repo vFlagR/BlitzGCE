@@ -73,9 +73,9 @@ hddsize() {
 Hard Drive size will depend on the types of files you want to download.
 Remember: 4K movies can be 50gb+ and take some time to move to Google.
 
-500Gb is recommended for most users.
+500GB is recommended for most users.
 
-INSTRUCTIONS: Set number for size of drive in GB. e.g: 200 = 200gb disk
+INSTRUCTIONS: Choose drive size including GB or TB. E.g: 200GB or 2TB etc..
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 EOF
@@ -84,7 +84,7 @@ EOF
   drivesize="$(echo /var/plexguide/project.hddsize)"
 
   if [[ "$typed" != "" ]]; then
-    echo "$typed"GB > /var/plexguide/project.hddsize
+    echo "$typed" > /var/plexguide/project.hddsize
   elif [[ "$typed" == "Z" || "z" || "q" || "Q" || "c" || "C" ]]; then
     echo "no changes" #fi
   else hddsize; fi
