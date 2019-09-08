@@ -55,7 +55,7 @@ gcestart() {
 
 Server status            : $gcestatuscheck
 a. Start/Stop Server
-d. Destroy Server
+b. Destroy Server
 z. Exit
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -130,12 +130,12 @@ EOF
         fi
         gcestart
         ;;
-    D)
+    B)
         projectdeny
         destroyserver
         gcestart
         ;;
-    d)
+    b)
         projectdeny
         destroyserver
         gcestart
