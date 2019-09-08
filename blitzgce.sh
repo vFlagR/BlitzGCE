@@ -36,7 +36,7 @@ gcestart() {
         gcedeployedcheck=NOT-SET
     fi
 
-    servercheck
+    serverstatuscheck
 
     tee <<-EOF
 
@@ -54,7 +54,6 @@ gcestart() {
 8. SSH into the GCE Box
 
 a. Stop Server
-b. Start Server
 d. Destroy Server
 z. Exit
 
