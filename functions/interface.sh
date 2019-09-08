@@ -81,10 +81,10 @@ INSTRUCTIONS: Set number for size of drive in GB. e.g: 200 = 200gb disk
 EOF
   read -p 'Type Number | Press [ENTER]: ' typed </dev/tty
 
-  drivesize="$(echo /var/plexguide/deploy.hddsize)"
+  drivesize="$(echo /var/plexguide/project.hddsize)"
 
   if [[ "$typed" != "" ]]; then
-    echo "$typed"GB >/var/plexguide/deploy.hddsize
+    echo "$typed"GB > /var/plexguide/project.hddsize
   elif [[ "$typed" == "Z" || "z" || "q" || "Q" || "c" || "C" ]]; then
     echo "no changes" #fi
   else hddsize; fi
